@@ -1,0 +1,20 @@
+query Posts($after: String, $before: String, $first: Int = 2) {
+  postsConnection(after: $after, before: $before, first: $first) {
+    post: edges {
+      node {
+        author {
+          name
+        }
+        title
+        excerpt
+        slug
+      }
+    }
+    pageInfo {
+      startCursor
+      endCursor
+      hasPreviousPage
+      hasNextPage
+    }
+  }
+}
